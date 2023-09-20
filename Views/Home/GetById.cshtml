@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Item
+<form dir="auto" asp-action="Edit" asp-controller="Home" method="post">
+    <div class="text-center">
+        <label asp-for="Id"></label>
+        <input asp-for="Id" value="@Model.Id" title="فقط خواندنی" readonly />
+        <span asp-validation-for="Id"></span>
+    </div>
+    <div class="text-center mynameform allform">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@Model.Name" autocomplete="off" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="text-center mypriceform allform">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" value="@Model.Price" autocomplete="off"/>
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div class="text-center mydescriptionform allform">
+        <textarea asp-for="Description" placeholder=" توضیحات تکمیلی">@Model.Description</textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="text-center allform">
+        <input id="submit" type="submit" value="ویرایش" />
+    </div>
+</form>

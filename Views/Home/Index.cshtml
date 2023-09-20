@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Item>
+@{
+    ViewData["Download"] = "دانلود فایل کل محصولات";
+}
+<div class="text-center">
+    <a class="display-4" asp-action="GetFile" asp-controller="File" title="برای دانلود کلیک کنید"><h1>@ViewData["Download"]</h1></a>
+</div>
+<table id="maintable" dir="auto">
+    @foreach (Item x in Model)
+    {
+        <tr>
+            @if (x.Id != 1)
+            {
+                <td title="@x.Name">@Html.ActionLink("حذف","DeleteById",new{id=x.Id})</td>
+                <td title="@x.Name">@Html.ActionLink("ویرایش","GetById",new{id=x.Id})</td>
+            }
+            else
+            {
+                <td></td>
+                <td></td>
+            }
+            <td>@x.Name</td>
+            <td>@x.Price</td>
+            <td>@x.Description</td>
+        </tr>
+    }
+</table>
+

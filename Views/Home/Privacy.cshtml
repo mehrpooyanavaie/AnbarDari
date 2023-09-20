@@ -1,0 +1,32 @@
+﻿@model Item
+@{
+    ViewData["Title"] = "افزودن محصول";
+}
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+<body>
+    <form dir="auto" asp-action="Privacy" asp-controller="Home" method="post">
+        <div class="text-center formname">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" autocomplete="off" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="text-center formprice allform">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" autocomplete="off" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="text-center formdescription allform">
+            <textarea asp-for="Description" placeholder="توضیحات تکمیلی"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="text-center allform">
+            <input id="submit" type="submit" value="ثبت" />
+        </div>
+    </form>
+</body>
